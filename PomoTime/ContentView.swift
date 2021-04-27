@@ -8,14 +8,22 @@
 import SwiftUI
 
 struct ContentView: View {
-    // 25 minutes in seconds
-    @State private var timeRemaining = 25*60
+    
+    @State private var timeRemaining = 25*60 // 25 minutes in seconds
     @State private var startCountdown = false;
+    @State var selected = 0
     
     let timer = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
     
     var body: some View {
-        VStack {
+        
+        VStack{
+            Picker(selection: $selected, label: Text(""), content: {
+                Text("Pomodoro").tag(0)
+                Text("Short Break").tag(1)
+                Text("Long Break").tag(2)
+            }).pickerStyle(SegmentedPickerStyle()).padding()
+            Spacer()
             Text(timeString(time: timeRemaining))
                 .padding()
                 .font(.largeTitle)
@@ -25,13 +33,14 @@ struct ContentView: View {
                     }
                 }
             Button(action: {
-                self.startCountdown = true
+                self.startCountdown.toggle()
             }) {
-                Text("Start Countdown").font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/)
-            }
-            Spacer().frame(width: 0, height: 50, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
-            Button(action: {self.startCountdown = false}) {
-                Text("Stop Countdown").font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/)
+                if self.startCountdown {
+                    Text("Stop Countdown").font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/)
+                }
+                else{
+                    Text("Start Countdown").font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/)
+                }
             }
         }
         
@@ -39,10 +48,9 @@ struct ContentView: View {
     
     //Convert the time into 24hr (24:00:00) format
     func timeString(time: Int) -> String {
-        let hours   = Int(time) / 3600
         let minutes = Int(time) / 60 % 60
         let seconds = Int(time) % 60
-        return String(format:"%02i:%02i:%02i", hours, minutes, seconds)
+        return String(format:"%02i:%02i", minutes, seconds)
     }
 }
 
