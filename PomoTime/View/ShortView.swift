@@ -8,13 +8,33 @@
 import SwiftUI
 
 struct ShortView: View {
+    @State private var timeRemaining = 5*60 // 5 minutes in seconds
+    @State private var startCountdown = false;
+
+    
+    let timer = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        VStack{
+            Text(timeString(time: timeRemaining))
+                .padding()
+                .font(.largeTitle)
+                .onReceive(timer) { _ in
+                    if timeRemaining > 0 && startCountdown != false {
+                        timeRemaining -= 1
+                    }
+                }
+            Button(action: {
+                self.startCountdown.toggle()
+            }) {
+                if self.startCountdown {
+                    Text("Stop Countdown").font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/)
+                }
+                else{
+                    Text("Start Countdown").font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/)
+                }
+            }
+        }
     }
 }
 
-struct ShortView_Previews: PreviewProvider {
-    static var previews: some View {
-        ShortView()
-    }
-}
