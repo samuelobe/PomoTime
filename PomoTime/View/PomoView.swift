@@ -39,4 +39,10 @@ struct PomoView: View {
     }
 }
 
+struct PomoView_Previews: PreviewProvider {
+    static var previews: some View {
+        PomoView()
+    }
+}
+
 

@@ -19,7 +19,7 @@ struct ContentView: View {
                 Text("Long Break").tag(2)
             }).pickerStyle(SegmentedPickerStyle()).padding()
             Spacer()
-            switch self.viewModel.selected {
+            switch viewModel.selected {
             case 0:
                 PomoView()
             case 1:
@@ -29,7 +29,7 @@ struct ContentView: View {
             default:
                 PomoView()
             }
-            
+            Spacer()
         }
     }
 }
