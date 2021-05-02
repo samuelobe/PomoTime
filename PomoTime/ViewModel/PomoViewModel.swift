@@ -8,13 +8,24 @@
 import Foundation
 
 class PomoViewModel: ObservableObject {
-    @Published var timeRemaining = 25*60 // 25 minutes in seconds
-    @Published var startCountdown = false;
+    @Published var timeRemaining : Int
+    @Published var startCountdown = false
+    let constTimeRemaining : Int
+    
+    init(minutes : Int) {
+        self.timeRemaining = minutes * 60
+        self.constTimeRemaining = minutes * 60
+    }
     
     let timer = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
     
-    static func testState() -> PomoViewModel {
-        let viewModel = PomoViewModel()
+    func reset(){
+        timeRemaining = constTimeRemaining
+        startCountdown = false
+    }
+    
+    static func testState(minutes : Int) -> PomoViewModel {
+        let viewModel = PomoViewModel(minutes: minutes)
         
         return viewModel
     }

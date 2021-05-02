@@ -10,7 +10,8 @@ import SwiftUI
 struct ContentView: View {
     
     @ObservedObject var viewModel : ContentViewModel
-    @StateObject var pomoViewModel = PomoViewModel()
+    
+    @StateObject var pomoViewModel = PomoViewModel(minutes: 1)
     @StateObject var shortViewModel = ShortViewModel()
     @StateObject var longViewModel = LongViewModel()
     
@@ -38,7 +39,7 @@ struct ContentView: View {
                     pomoView
                 }
              
-            }
+            }.environmentObject(viewModel)
     }
 }
 

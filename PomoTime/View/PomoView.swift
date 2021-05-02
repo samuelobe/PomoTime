@@ -10,6 +10,7 @@ import SwiftUI
 
 struct PomoView: View {
     @ObservedObject var viewModel : PomoViewModel
+    @EnvironmentObject var contentViewModel : ContentViewModel
     
     var body: some View {
         VStack{
@@ -22,8 +23,12 @@ struct PomoView: View {
                         .padding()
                         .font(.largeTitle)
                         .onReceive(viewModel.timer) { _ in
-                            if viewModel.timeRemaining > 0 && viewModel.startCountdown != false {
+                            if viewModel.timeRemaining > 0 && viewModel.startCountdown == true {
                                 viewModel.timeRemaining -= 1
+                            }
+                            else if viewModel.timeRemaining <= 0 && viewModel.startCountdown == true   {
+                                contentViewModel.selected = 1
+                                viewModel.reset()
                             }
                         }
                 }
@@ -45,7 +50,7 @@ struct PomoView: View {
 
 struct PomoView_Previews: PreviewProvider {
     static var previews: some View {
-        PomoView(viewModel: PomoViewModel.testState()).previewLayout(.sizeThatFits)
+        PomoView(viewModel: PomoViewModel.testState(minutes: 1)).previewLayout(.sizeThatFits)
     }
 }
 
