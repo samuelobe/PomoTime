@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3D40C32F263F182600BA37D2 /* ShortViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D40C32E263F182600BA37D2 /* ShortViewModel.swift */; };
+		3D40C334263F185600BA37D2 /* LongViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D40C333263F185600BA37D2 /* LongViewModel.swift */; };
 		3D4E55A3263634DD00CA42EE /* PomoTimeApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D4E55A2263634DD00CA42EE /* PomoTimeApp.swift */; };
 		3D4E55A5263634DD00CA42EE /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D4E55A4263634DD00CA42EE /* ContentView.swift */; };
 		3D4E55A7263634DF00CA42EE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3D4E55A6263634DF00CA42EE /* Assets.xcassets */; };
@@ -42,6 +44,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		3D40C32E263F182600BA37D2 /* ShortViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShortViewModel.swift; sourceTree = "<group>"; };
+		3D40C333263F185600BA37D2 /* LongViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LongViewModel.swift; sourceTree = "<group>"; };
 		3D4E559F263634DD00CA42EE /* PomoTime.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PomoTime.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3D4E55A2263634DD00CA42EE /* PomoTimeApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PomoTimeApp.swift; sourceTree = "<group>"; };
 		3D4E55A4263634DD00CA42EE /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -165,6 +169,8 @@
 			children = (
 				3D8771B0263908DF00159548 /* ContentViewModel.swift */,
 				3D8771BF263C7C6D00159548 /* PomoViewModel.swift */,
+				3D40C32E263F182600BA37D2 /* ShortViewModel.swift */,
+				3D40C333263F185600BA37D2 /* LongViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -321,9 +327,11 @@
 			files = (
 				3D8771B62639D05D00159548 /* Task.swift in Sources */,
 				3D8771882638B1BC00159548 /* PomoView.swift in Sources */,
+				3D40C334263F185600BA37D2 /* LongViewModel.swift in Sources */,
 				3D87719D2638F65F00159548 /* Helpers.swift in Sources */,
 				3D87718D2638B1D200159548 /* ShortView.swift in Sources */,
 				3D8771B1263908DF00159548 /* ContentViewModel.swift in Sources */,
+				3D40C32F263F182600BA37D2 /* ShortViewModel.swift in Sources */,
 				3D4E55A5263634DD00CA42EE /* ContentView.swift in Sources */,
 				3D4E55A3263634DD00CA42EE /* PomoTimeApp.swift in Sources */,
 				3D8771922638B1E000159548 /* LongView.swift in Sources */,

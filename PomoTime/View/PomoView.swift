@@ -16,7 +16,7 @@ struct PomoView: View {
             HStack {
                 Spacer().frame(width: 75)
                 ZStack {
-                    ProgressView(progress: Float(viewModel.timeRemaining)*(1/(25*60)))
+                    ProgressView(progress: Float(viewModel.timeRemaining)*(1/(25*60)), color: .red)
                     Text(timeString(time: viewModel.timeRemaining))
                         .foregroundColor(.red)
                         .padding()

@@ -11,10 +11,15 @@ struct ContentView: View {
     
     @ObservedObject var viewModel : ContentViewModel
     @StateObject var pomoViewModel = PomoViewModel()
+    @StateObject var shortViewModel = ShortViewModel()
+    @StateObject var longViewModel = LongViewModel()
     
     var body: some View {
             
-            let pomoView = PomoView(viewModel: pomoViewModel)
+        let pomoView = PomoView(viewModel: pomoViewModel)
+        let shortView = ShortView(viewModel: shortViewModel)
+        let longView = LongView(viewModel: longViewModel)
+        
             VStack {
                 Picker(selection: $viewModel.selected, label: Text(""), content: {
                     Text("Pomodoro").tag(0)
@@ -26,9 +31,9 @@ struct ContentView: View {
                 case 0:
                     pomoView
                 case 1:
-                    ShortView()
+                    shortView
                 case 2:
-                    LongView()
+                    longView
                 default:
                     pomoView
                 }

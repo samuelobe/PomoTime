@@ -8,26 +8,30 @@
 import SwiftUI
 
 struct ShortView: View {
-    @State private var timeRemaining = 5*60 // 5 minutes in seconds
-    @State private var startCountdown = false;
-
-    
-    let timer = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
+    @ObservedObject var viewModel : ShortViewModel
     
     var body: some View {
         VStack{
-            Text(timeString(time: timeRemaining))
-                .padding()
-                .font(.largeTitle)
-                .onReceive(timer) { _ in
-                    if timeRemaining > 0 && startCountdown != false {
-                        timeRemaining -= 1
-                    }
+            HStack {
+                Spacer().frame(width: 75)
+                ZStack {
+                    ProgressView(progress: Float(viewModel.timeRemaining)*(1/(5*60)), color: .blue)
+                    Text(timeString(time: viewModel.timeRemaining))
+                        .foregroundColor(.blue)
+                        .padding()
+                        .font(.largeTitle)
+                        .onReceive(viewModel.timer) { _ in
+                            if viewModel.timeRemaining > 0 && viewModel.startCountdown != false {
+                                viewModel.timeRemaining -= 1
+                            }
+                        }
                 }
+                Spacer().frame(width: 75)
+            }
             Button(action: {
-                self.startCountdown.toggle()
+                viewModel.startCountdown.toggle()
             }) {
-                if self.startCountdown {
+                if viewModel.startCountdown {
                     Text("Stop Countdown").font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/)
                 }
                 else{
@@ -35,6 +39,12 @@ struct ShortView: View {
                 }
             }
         }
+    }
+}
+
+struct ShortView_Previews: PreviewProvider {
+    static var previews: some View {
+        ShortView(viewModel: ShortViewModel.testState()).previewLayout(.sizeThatFits)
     }
 }
 
