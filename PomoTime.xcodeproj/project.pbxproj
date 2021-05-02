@@ -113,7 +113,7 @@
 		3D4E55A1263634DD00CA42EE /* PomoTime */ = {
 			isa = PBXGroup;
 			children = (
-				3D8771A42639017300159548 /* Helpers */,
+				3D8771A42639017300159548 /* Util */,
 				3D8771982638B20F00159548 /* View */,
 				3D8771972638B20800159548 /* ViewModel */,
 				3D8771962638B20200159548 /* Model */,
@@ -181,12 +181,12 @@
 			path = View;
 			sourceTree = "<group>";
 		};
-		3D8771A42639017300159548 /* Helpers */ = {
+		3D8771A42639017300159548 /* Util */ = {
 			isa = PBXGroup;
 			children = (
 				3D87719C2638F65F00159548 /* Helpers.swift */,
 			);
-			path = Helpers;
+			path = Util;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

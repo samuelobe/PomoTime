@@ -9,30 +9,30 @@ import SwiftUI
 
 
 struct PomoView: View {
-    @ObservedObject var pomoViewModel = PomoViewModel()
+    @ObservedObject var viewModel : PomoViewModel
     
     var body: some View {
         VStack{
             HStack {
                 Spacer().frame(width: 75)
                 ZStack {
-                    ProgressView(progress: Float(pomoViewModel.timeRemaining)*(1/(25*60)))
-                    Text(timeString(time: pomoViewModel.timeRemaining))
+                    ProgressView(progress: Float(viewModel.timeRemaining)*(1/(25*60)))
+                    Text(timeString(time: viewModel.timeRemaining))
                         .foregroundColor(.red)
                         .padding()
                         .font(.largeTitle)
-                        .onReceive(pomoViewModel.timer) { _ in
-                            if pomoViewModel.timeRemaining > 0 && pomoViewModel.startCountdown != false {
-                                pomoViewModel.timeRemaining -= 1
+                        .onReceive(viewModel.timer) { _ in
+                            if viewModel.timeRemaining > 0 && viewModel.startCountdown != false {
+                                viewModel.timeRemaining -= 1
                             }
                         }
                 }
                 Spacer().frame(width: 75)
             }
             Button(action: {
-                pomoViewModel.startCountdown.toggle()
+                viewModel.startCountdown.toggle()
             }) {
-                if pomoViewModel.startCountdown {
+                if viewModel.startCountdown {
                     Text("Stop Countdown").font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/)
                 }
                 else{
@@ -45,7 +45,7 @@ struct PomoView: View {
 
 struct PomoView_Previews: PreviewProvider {
     static var previews: some View {
-        PomoView()
+        PomoView(viewModel: PomoViewModel.testState()).previewLayout(.sizeThatFits)
     }
 }
 

@@ -12,4 +12,10 @@ class PomoViewModel: ObservableObject {
     @Published var startCountdown = false;
     
     let timer = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
+    
+    static func testState() -> PomoViewModel {
+        let viewModel = PomoViewModel()
+        
+        return viewModel
+    }
 }
