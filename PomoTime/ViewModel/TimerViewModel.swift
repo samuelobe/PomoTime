@@ -7,10 +7,10 @@
 
 import Foundation
 
-class PomoViewModel: ObservableObject {
+class TimerViewModel: ObservableObject {
     @Published var timeRemaining : Int
     @Published var startCountdown = false
-    let constTimeRemaining : Int
+    var constTimeRemaining : Int
     
     init(minutes : Int) {
         self.timeRemaining = minutes * 60
@@ -24,8 +24,8 @@ class PomoViewModel: ObservableObject {
         startCountdown = false
     }
     
-    static func testState(minutes : Int) -> PomoViewModel {
-        let viewModel = PomoViewModel(minutes: minutes)
+    static func testState(minutes : Int) -> TimerViewModel {
+        let viewModel = TimerViewModel(minutes: minutes)
         
         return viewModel
     }

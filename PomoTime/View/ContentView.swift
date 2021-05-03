@@ -9,12 +9,12 @@ import SwiftUI
 
 struct ContentView: View {
     
-    @ObservedObject var viewModel : ContentViewModel
+    @ObservedObject var contentViewModel : ContentViewModel
+    @ObservedObject var pomoViewModel : TimerViewModel
+    @ObservedObject var shortViewModel : TimerViewModel
+    @ObservedObject var longViewModel : TimerViewModel
     
-    @StateObject var pomoViewModel = PomoViewModel(minutes: 1)
-    @StateObject var shortViewModel = ShortViewModel()
-    @StateObject var longViewModel = LongViewModel()
-    
+
     var body: some View {
             
         let pomoView = PomoView(viewModel: pomoViewModel)
@@ -22,13 +22,13 @@ struct ContentView: View {
         let longView = LongView(viewModel: longViewModel)
         
             VStack {
-                Picker(selection: $viewModel.selected, label: Text(""), content: {
+                Picker(selection: $contentViewModel.selected, label: Text(""), content: {
                     Text("Pomodoro").tag(0)
                     Text("Short Break").tag(1)
                     Text("Long Break").tag(2)
                 }).pickerStyle(SegmentedPickerStyle()).padding()
                 
-                switch viewModel.selected {
+                switch contentViewModel.selected {
                 case 0:
                     pomoView
                 case 1:
@@ -39,7 +39,7 @@ struct ContentView: View {
                     pomoView
                 }
              
-            }.environmentObject(viewModel)
+            }.environmentObject(contentViewModel)
     }
 }
 
@@ -60,7 +60,7 @@ struct TaskCell: View { // (5)
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView(viewModel: ContentViewModel.testState())
+        ContentView(contentViewModel: ContentViewModel.testState(), pomoViewModel: TimerViewModel.testState(minutes: 1), shortViewModel: TimerViewModel.testState(minutes: 5), longViewModel: TimerViewModel.testState(minutes: 15))
         
     }
 }

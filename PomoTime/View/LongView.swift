@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct LongView: View {
-    @ObservedObject var viewModel : LongViewModel
+    @ObservedObject var viewModel : TimerViewModel
     
     var body: some View {
         VStack{
@@ -44,6 +44,6 @@ struct LongView: View {
 
 struct LongView_Previews: PreviewProvider {
     static var previews: some View {
-        LongView(viewModel: LongViewModel.testState()).previewLayout(.sizeThatFits)
+        LongView(viewModel: TimerViewModel.testState(minutes: 15)).previewLayout(.sizeThatFits)
     }
 }

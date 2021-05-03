@@ -9,7 +9,7 @@ import SwiftUI
 
 
 struct PomoView: View {
-    @ObservedObject var viewModel : PomoViewModel
+    @ObservedObject var viewModel : TimerViewModel
     @EnvironmentObject var contentViewModel : ContentViewModel
     
     var body: some View {
@@ -50,7 +50,7 @@ struct PomoView: View {
 
 struct PomoView_Previews: PreviewProvider {
     static var previews: some View {
-        PomoView(viewModel: PomoViewModel.testState(minutes: 1)).previewLayout(.sizeThatFits)
+        PomoView(viewModel: TimerViewModel.testState(minutes: 1)).previewLayout(.sizeThatFits)
     }
 }
 
