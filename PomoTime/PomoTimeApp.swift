@@ -9,9 +9,14 @@ import SwiftUI
 
 @main
 struct PomoTimeApp: App {
+    
+    @StateObject var contentViewModel = ContentViewModel()
+    @StateObject var pomoViewModel = TimerViewModel(minutes: 25)
+    @StateObject var shortViewModel = TimerViewModel(minutes: 5)
+    @StateObject var longViewModel = TimerViewModel(minutes: 15)
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            ContentView(contentViewModel: contentViewModel, pomoViewModel: pomoViewModel, shortViewModel: shortViewModel, longViewModel: longViewModel )
         }
     }
 }
