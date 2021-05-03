@@ -60,7 +60,7 @@ struct TaskCell: View { // (5)
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView(contentViewModel: ContentViewModel.testState(), pomoViewModel: TimerViewModel.testState(minutes: 1), shortViewModel: TimerViewModel.testState(minutes: 5), longViewModel: TimerViewModel.testState(minutes: 15))
+        ContentView(contentViewModel: ContentViewModel.testState(), pomoViewModel: TimerViewModel.testState(minutes: 1), shortViewModel: TimerViewModel.testState(minutes: 1), longViewModel: TimerViewModel.testState(minutes: 1))
         
     }
 }

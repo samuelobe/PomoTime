@@ -27,7 +27,15 @@ struct PomoView: View {
                                 viewModel.timeRemaining -= 1
                             }
                             else if viewModel.timeRemaining <= 0 && viewModel.startCountdown == true   {
-                                contentViewModel.selected = 1
+                                contentViewModel.numPomoCycles+=1
+                                
+                                if contentViewModel.numPomoCycles % 4 == 0 {
+                                    contentViewModel.selected = 2
+                                }
+                                else{
+                                    contentViewModel.selected = 1
+                                }
+                                
                                 viewModel.reset()
                             }
                         }

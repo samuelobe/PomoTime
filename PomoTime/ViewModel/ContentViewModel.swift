@@ -10,6 +10,7 @@ import Foundation
 
 class ContentViewModel: ObservableObject {
     @Published var selected = 0
+    @Published var numPomoCycles = 0
     
     static func testState() -> ContentViewModel {
         let viewModel = ContentViewModel()
