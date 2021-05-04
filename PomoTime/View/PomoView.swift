@@ -11,15 +11,16 @@ import SwiftUI
 struct PomoView: View {
     @ObservedObject var viewModel : TimerViewModel
     @EnvironmentObject var contentViewModel : ContentViewModel
+    var color : Color
     
     var body: some View {
         VStack{
             HStack {
                 Spacer().frame(width: 75)
                 ZStack {
-                    ProgressView(progress: Float(viewModel.timeRemaining)*(1/(25*60)), color: .red)
+                    ProgressView(progress: viewModel.getProgress(), color: color)
                     Text(timeString(time: viewModel.timeRemaining))
-                        .foregroundColor(.red)
+                        .foregroundColor(color)
                         .padding()
                         .font(.largeTitle)
                         .onReceive(viewModel.timer) { _ in
@@ -58,7 +59,7 @@ struct PomoView: View {
 
 struct PomoView_Previews: PreviewProvider {
     static var previews: some View {
-        PomoView(viewModel: TimerViewModel.testState(minutes: 1)).previewLayout(.sizeThatFits)
+        PomoView(viewModel: TimerViewModel.testState(minutes: 25), color: .red).previewLayout(.sizeThatFits)
     }
 }
 

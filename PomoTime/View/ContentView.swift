@@ -17,9 +17,9 @@ struct ContentView: View {
 
     var body: some View {
             
-        let pomoView = PomoView(viewModel: pomoViewModel)
-        let shortView = ShortView(viewModel: shortViewModel)
-        let longView = LongView(viewModel: longViewModel)
+        let pomoView = PomoView(viewModel: pomoViewModel, color: .red)
+        let shortView = PomoView(viewModel: shortViewModel, color: .blue)
+        let longView = PomoView(viewModel: longViewModel, color: .green)
         
             VStack {
                 Picker(selection: $contentViewModel.selected, label: Text(""), content: {

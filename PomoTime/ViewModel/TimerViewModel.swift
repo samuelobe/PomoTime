@@ -8,23 +8,27 @@
 import Foundation
 
 class TimerViewModel: ObservableObject {
-    @Published var timeRemaining : Int
+    @Published var timeRemaining : Float
     @Published var startCountdown = false
-    var constTimeRemaining : Int
+    var constTimeRemaining : Float
+    let timer = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
     
-    init(minutes : Int) {
+    init(minutes : Float) {
         self.timeRemaining = minutes * 60
         self.constTimeRemaining = minutes * 60
     }
-    
-    let timer = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
     
     func reset(){
         timeRemaining = constTimeRemaining
         startCountdown = false
     }
     
-    static func testState(minutes : Int) -> TimerViewModel {
+    func getProgress() -> Float{
+        let progress = timeRemaining*(1/(constTimeRemaining))
+        return progress
+    }
+    
+    static func testState(minutes : Float) -> TimerViewModel {
         let viewModel = TimerViewModel(minutes: minutes)
         
         return viewModel

@@ -14,8 +14,6 @@
 		3D4E55B5263634DF00CA42EE /* PomoTimeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D4E55B4263634DF00CA42EE /* PomoTimeTests.swift */; };
 		3D4E55C0263634DF00CA42EE /* PomoTimeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D4E55BF263634DF00CA42EE /* PomoTimeUITests.swift */; };
 		3D8771882638B1BC00159548 /* PomoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D8771872638B1BC00159548 /* PomoView.swift */; };
-		3D87718D2638B1D200159548 /* ShortView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D87718C2638B1D200159548 /* ShortView.swift */; };
-		3D8771922638B1E000159548 /* LongView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D8771912638B1E000159548 /* LongView.swift */; };
 		3D87719D2638F65F00159548 /* Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D87719C2638F65F00159548 /* Helpers.swift */; };
 		3D8771B1263908DF00159548 /* ContentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D8771B0263908DF00159548 /* ContentViewModel.swift */; };
 		3D8771B62639D05D00159548 /* Task.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D8771B52639D05D00159548 /* Task.swift */; };
@@ -55,8 +53,6 @@
 		3D4E55BF263634DF00CA42EE /* PomoTimeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PomoTimeUITests.swift; sourceTree = "<group>"; };
 		3D4E55C1263634DF00CA42EE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3D8771872638B1BC00159548 /* PomoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PomoView.swift; sourceTree = "<group>"; };
-		3D87718C2638B1D200159548 /* ShortView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShortView.swift; sourceTree = "<group>"; };
-		3D8771912638B1E000159548 /* LongView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LongView.swift; sourceTree = "<group>"; };
 		3D87719C2638F65F00159548 /* Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helpers.swift; sourceTree = "<group>"; };
 		3D8771B0263908DF00159548 /* ContentViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentViewModel.swift; sourceTree = "<group>"; };
 		3D8771B52639D05D00159548 /* Task.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Task.swift; sourceTree = "<group>"; };
@@ -174,8 +170,6 @@
 			children = (
 				3D4E55A4263634DD00CA42EE /* ContentView.swift */,
 				3D8771872638B1BC00159548 /* PomoView.swift */,
-				3D87718C2638B1D200159548 /* ShortView.swift */,
-				3D8771912638B1E000159548 /* LongView.swift */,
 				3D8771BA263C751600159548 /* ProgressView.swift */,
 			);
 			path = View;
@@ -322,11 +316,9 @@
 				3D8771B62639D05D00159548 /* Task.swift in Sources */,
 				3D8771882638B1BC00159548 /* PomoView.swift in Sources */,
 				3D87719D2638F65F00159548 /* Helpers.swift in Sources */,
-				3D87718D2638B1D200159548 /* ShortView.swift in Sources */,
 				3D8771B1263908DF00159548 /* ContentViewModel.swift in Sources */,
 				3D4E55A5263634DD00CA42EE /* ContentView.swift in Sources */,
 				3D4E55A3263634DD00CA42EE /* PomoTimeApp.swift in Sources */,
-				3D8771922638B1E000159548 /* LongView.swift in Sources */,
 				3D8771BB263C751600159548 /* ProgressView.swift in Sources */,
 				3D8771C0263C7C6D00159548 /* TimerViewModel.swift in Sources */,
 			);
