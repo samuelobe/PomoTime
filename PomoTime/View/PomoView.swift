@@ -45,15 +45,28 @@ struct PomoView: View {
             }
             Button(action: {
                 viewModel.startCountdown.toggle()
-            }) {
+            })
+            {
                 if viewModel.startCountdown {
-                    Text("Stop Countdown").font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/)
+                    PomoButton(systemName: "stop.fill", color: color)
                 }
                 else{
-                    Text("Start Countdown").font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/)
+                    PomoButton(systemName: "play.fill", color: color)
                 }
             }
         }
+    }
+}
+
+struct PomoButton: View {
+    var systemName : String
+    var color: Color
+    
+    var body: some View{
+        Image(systemName: systemName).font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/).frame(width: 80, height: 80)
+            .foregroundColor(Color.white)
+            .background(color)
+            .clipShape(Circle())
     }
 }
 

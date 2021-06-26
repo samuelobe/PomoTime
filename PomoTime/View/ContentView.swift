@@ -43,14 +43,14 @@ struct ContentView: View {
     }
 }
 
-struct TaskCell: View { // (5)
+struct TaskCell: View {
   var task: Task
   
   var body: some View {
     HStack() {
         Image(systemName: task.completed ? "checkmark.circle.fill" : "circle")
             .resizable()
-            .frame(width: 25, height: 25).padding(.leading) // (12)
+            .frame(width: 25, height: 25).padding(.leading) 
         Text(task.taskName)
             .font(.title)
         Spacer()
