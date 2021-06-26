@@ -10,7 +10,7 @@ import Foundation
 class TimerViewModel: ObservableObject {
     @Published var timeRemaining : Float
     @Published var startCountdown = false
-    var constTimeRemaining : Float
+    let constTimeRemaining : Float
     let timer = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
     
     init(minutes : Float) {

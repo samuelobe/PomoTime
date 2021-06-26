@@ -11,10 +11,28 @@ import SwiftUI
 struct PomoView: View {
     @ObservedObject var viewModel : TimerViewModel
     @EnvironmentObject var contentViewModel : ContentViewModel
+    @State private var inEditMode = false
+    @State private var fieldText = "What is your current task?"
+    
     var color : Color
     
     var body: some View {
         VStack{
+            Spacer().frame(height: 75)
+            HStack{
+                if inEditMode {
+                    TextField("Task", text: $fieldText).textFieldStyle(RoundedBorderTextFieldStyle()).padding(.leading, 5).font(.system(size: 25))
+                }
+                else {
+                    Text(fieldText).font(.system(size: 25))
+                }
+                
+                Button(action: {
+                    self.inEditMode.toggle()
+                }) {
+                    Image(systemName: "pencil" ).font(.system(size: 25)).foregroundColor(.gray)
+                }
+            }
             HStack {
                 Spacer().frame(width: 75)
                 ZStack {
@@ -30,7 +48,7 @@ struct PomoView: View {
                             else if viewModel.timeRemaining <= 0 && viewModel.startCountdown == true   {
                                 contentViewModel.numPomoCycles+=1
                                 
-                                if contentViewModel.numPomoCycles % 4 == 0 {
+                                if contentViewModel.numPomoCycles % 2 == 0 {
                                     contentViewModel.selected = 2
                                 }
                                 else{
@@ -43,6 +61,7 @@ struct PomoView: View {
                 }
                 Spacer().frame(width: 75)
             }
+            Spacer().frame(height: 75)
             Button(action: {
                 viewModel.startCountdown.toggle()
             })
@@ -54,7 +73,7 @@ struct PomoView: View {
                     PomoButton(systemName: "play.fill", color: color)
                 }
             }
-        }
+        }.ignoresSafeArea(.keyboard)
     }
 }
 
@@ -63,10 +82,11 @@ struct PomoButton: View {
     var color: Color
     
     var body: some View{
-        Image(systemName: systemName).font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/).frame(width: 80, height: 80)
+        Image(systemName: systemName).frame(width: 80, height: 80)
             .foregroundColor(Color.white)
             .background(color)
             .clipShape(Circle())
+            .font(.system(size: 25))
     }
 }
 
