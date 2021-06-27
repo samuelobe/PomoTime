@@ -9,36 +9,22 @@ import SwiftUI
 
 struct ContentView: View {
     
-    @ObservedObject var contentViewModel : ContentViewModel
-    @ObservedObject var pomoViewModel : TimerViewModel
-    @ObservedObject var shortViewModel : TimerViewModel
-    @ObservedObject var longViewModel : TimerViewModel
+    @StateObject var contentViewModel = ContentViewModel()
+    @StateObject var pomoViewModel = TimerViewModel(minutes: 25)
+    @StateObject var shortViewModel = TimerViewModel(minutes: 5)
+    @StateObject var longViewModel = TimerViewModel(minutes: 15)
+
     
     
     var body: some View {
         
-        let pomoView = PomoView(viewModel: pomoViewModel, color: .red)
-        let shortView = PomoView(viewModel: shortViewModel, color: .blue)
-        let longView = PomoView(viewModel: longViewModel, color: .green)
-        
-        VStack {
-            Picker(selection: $contentViewModel.selected, label: Text(""), content: {
-                Text("Pomodoro").tag(0)
-                Text("Short Break").tag(1)
-                Text("Long Break").tag(2)
-            }).pickerStyle(SegmentedPickerStyle()).padding()
-            
-            switch contentViewModel.selected {
-            case 0:
-                pomoView
-            case 1:
-                shortView
-            case 2:
-                longView
-            default:
-                pomoView
+        TabView {
+            PomoView(pomoViewModel: pomoViewModel, shortViewModel: shortViewModel, longViewModel: longViewModel).tabItem {
+                Image(systemName: "timer")
             }
-            
+            SettingsView().tabItem {
+                Image(systemName: "gearshape.fill")
+            }
         }.environmentObject(contentViewModel)
     }
 }
@@ -60,7 +46,7 @@ struct TaskCell: View {
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView(contentViewModel: ContentViewModel.testState(), pomoViewModel: TimerViewModel.testState(minutes: 1), shortViewModel: TimerViewModel.testState(minutes: 1), longViewModel: TimerViewModel.testState(minutes: 1))
+        ContentView()
         
     }
 }

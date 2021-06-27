@@ -13,7 +13,7 @@
 		3D4E55AA263634DF00CA42EE /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3D4E55A9263634DF00CA42EE /* Preview Assets.xcassets */; };
 		3D4E55B5263634DF00CA42EE /* PomoTimeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D4E55B4263634DF00CA42EE /* PomoTimeTests.swift */; };
 		3D4E55C0263634DF00CA42EE /* PomoTimeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D4E55BF263634DF00CA42EE /* PomoTimeUITests.swift */; };
-		3D8771882638B1BC00159548 /* PomoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D8771872638B1BC00159548 /* PomoView.swift */; };
+		3D8771882638B1BC00159548 /* TimerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D8771872638B1BC00159548 /* TimerView.swift */; };
 		3D87719D2638F65F00159548 /* Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D87719C2638F65F00159548 /* Helpers.swift */; };
 		3D8771B1263908DF00159548 /* ContentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D8771B0263908DF00159548 /* ContentViewModel.swift */; };
 		3D8771B62639D05D00159548 /* Task.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D8771B52639D05D00159548 /* Task.swift */; };
@@ -35,6 +35,9 @@
 		3DD36DE52687C00100BF88BB /* Nunito-ExtraBoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3DD36DD62687C00100BF88BB /* Nunito-ExtraBoldItalic.ttf */; };
 		3DD36DE62687C00100BF88BB /* Nunito-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3DD36DD72687C00100BF88BB /* Nunito-Bold.ttf */; };
 		3DD36DE72687C00100BF88BB /* Nunito-SemiBoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3DD36DD82687C00100BF88BB /* Nunito-SemiBoldItalic.ttf */; };
+		3DD36DE92688CB4600BF88BB /* KeyboardReadable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DD36DE82688CB4600BF88BB /* KeyboardReadable.swift */; };
+		3DD36DED26890F0600BF88BB /* PomoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DD36DEC26890F0600BF88BB /* PomoView.swift */; };
+		3DD36DEF2689123000BF88BB /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DD36DEE2689123000BF88BB /* SettingsView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -67,7 +70,7 @@
 		3D4E55BB263634DF00CA42EE /* PomoTimeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PomoTimeUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3D4E55BF263634DF00CA42EE /* PomoTimeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PomoTimeUITests.swift; sourceTree = "<group>"; };
 		3D4E55C1263634DF00CA42EE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		3D8771872638B1BC00159548 /* PomoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PomoView.swift; sourceTree = "<group>"; };
+		3D8771872638B1BC00159548 /* TimerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerView.swift; sourceTree = "<group>"; };
 		3D87719C2638F65F00159548 /* Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helpers.swift; sourceTree = "<group>"; };
 		3D8771B0263908DF00159548 /* ContentViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentViewModel.swift; sourceTree = "<group>"; };
 		3D8771B52639D05D00159548 /* Task.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Task.swift; sourceTree = "<group>"; };
@@ -89,6 +92,9 @@
 		3DD36DD62687C00100BF88BB /* Nunito-ExtraBoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Nunito-ExtraBoldItalic.ttf"; sourceTree = "<group>"; };
 		3DD36DD72687C00100BF88BB /* Nunito-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Nunito-Bold.ttf"; sourceTree = "<group>"; };
 		3DD36DD82687C00100BF88BB /* Nunito-SemiBoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Nunito-SemiBoldItalic.ttf"; sourceTree = "<group>"; };
+		3DD36DE82688CB4600BF88BB /* KeyboardReadable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardReadable.swift; sourceTree = "<group>"; };
+		3DD36DEC26890F0600BF88BB /* PomoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PomoView.swift; sourceTree = "<group>"; };
+		3DD36DEE2689123000BF88BB /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -200,8 +206,10 @@
 			isa = PBXGroup;
 			children = (
 				3D4E55A4263634DD00CA42EE /* ContentView.swift */,
-				3D8771872638B1BC00159548 /* PomoView.swift */,
+				3D8771872638B1BC00159548 /* TimerView.swift */,
 				3D8771BA263C751600159548 /* ProgressView.swift */,
+				3DD36DEC26890F0600BF88BB /* PomoView.swift */,
+				3DD36DEE2689123000BF88BB /* SettingsView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -210,6 +218,7 @@
 			isa = PBXGroup;
 			children = (
 				3D87719C2638F65F00159548 /* Helpers.swift */,
+				3DD36DE82688CB4600BF88BB /* KeyboardReadable.swift */,
 			);
 			path = Util;
 			sourceTree = "<group>";
@@ -382,13 +391,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				3D8771B62639D05D00159548 /* Task.swift in Sources */,
-				3D8771882638B1BC00159548 /* PomoView.swift in Sources */,
+				3D8771882638B1BC00159548 /* TimerView.swift in Sources */,
 				3D87719D2638F65F00159548 /* Helpers.swift in Sources */,
 				3D8771B1263908DF00159548 /* ContentViewModel.swift in Sources */,
 				3D4E55A5263634DD00CA42EE /* ContentView.swift in Sources */,
+				3DD36DED26890F0600BF88BB /* PomoView.swift in Sources */,
+				3DD36DE92688CB4600BF88BB /* KeyboardReadable.swift in Sources */,
 				3D4E55A3263634DD00CA42EE /* PomoTimeApp.swift in Sources */,
 				3D8771BB263C751600159548 /* ProgressView.swift in Sources */,
 				3D8771C0263C7C6D00159548 /* TimerViewModel.swift in Sources */,
+				3DD36DEF2689123000BF88BB /* SettingsView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
